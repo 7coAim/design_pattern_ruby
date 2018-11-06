@@ -42,7 +42,8 @@ end
 class StringDisplay < AbstractDisplay
   def initialize(string)
     @string = string
-    @width = string.length
+    @width = print_size(string)
+    # @width = string.length
     # @width = string.bytesize
   end
 
@@ -67,6 +68,11 @@ class StringDisplay < AbstractDisplay
     end
     puts '+'
   end
+
+  # 文字列の表示幅を求める
+  def print_size(string)
+    string.each_char.map{|c| c.bytesize == 1 ? 1 : 2}.inject(0, &:+)
+  end
 end
 
 # ---------------------------------------------
@@ -78,3 +84,7 @@ d3 = StringDisplay.new('こんにちは。')
 d1.display
 d2.display
 d3.display
+
+puts d1.class
+puts d2.class
+puts d3.class
