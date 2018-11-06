@@ -82,7 +82,7 @@ end
 
 d1 = CharDisplay.new('H')
 d2 = StringDisplay.new("Hello, World.")
-d3 = StringDisplay.new('こんにちは。')
+d3 = StringDisplay.new("こんにちは。")
 
 d1.display
 d2.display
