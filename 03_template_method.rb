@@ -46,7 +46,7 @@ class StringDisplay < AbstractDisplay
     # @width = print_size(string)
     # 文字数を格納する
     # @width = string.length
-    # バイス数を格納するが 文字コードがUTF-8なら、漢字やひらがなは3バイトで計算される
+    # バイト数を格納するが 文字コードがUTF-8なら、漢字やひらがなは3バイトで計算される
     @width = string.bytesize
   end
 
