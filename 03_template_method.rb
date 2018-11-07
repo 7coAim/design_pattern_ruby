@@ -44,10 +44,10 @@ class StringDisplay < AbstractDisplay
     @string = string
     # 表示幅を求めて格納する
     @width = print_size(string)
-    # 文字数を格納する
-    # @width = string.length
-    # バイト数を格納するが 文字コードがUTF-8なら、漢字やひらがなは3バイトで計算される
-    # @width = string.bytesize
+      # 文字数を格納する
+      # @width = string.length
+      # バイト数を格納するが 文字コードがUTF-8なら、漢字やひらがなは3バイトで計算される
+      # @width = string.bytesize
   end
 
   def open
@@ -75,7 +75,7 @@ class StringDisplay < AbstractDisplay
 
   # 文字列の表示幅を求める
   def print_size(string)
-    string.each_char.map{|c| c.bytesize == 1 ? 1 : 2}.inject(:+)
+    string.each_char.map { |c| c.bytesize == 1 ? 1 : 2 }.inject(:+)
   end
 end
 
