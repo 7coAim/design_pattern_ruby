@@ -43,11 +43,11 @@ class StringDisplay < AbstractDisplay
   def initialize(string)
     @string = string
     # 表示幅を求めて格納する
-    # @width = print_size(string)
+    @width = print_size(string)
     # 文字数を格納する
     # @width = string.length
     # バイト数を格納するが 文字コードがUTF-8なら、漢字やひらがなは3バイトで計算される
-    @width = string.bytesize
+    # @width = string.bytesize
   end
 
   def open
@@ -66,9 +66,10 @@ class StringDisplay < AbstractDisplay
 
   def print_line
     printf '+'
-    @width.times do
-      printf '-'
-    end
+    printf '-' * @width
+    # @width.times do
+    #   printf '-'
+    # end
     puts '+'
   end
 
