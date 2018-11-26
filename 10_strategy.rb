@@ -89,7 +89,6 @@ class ProbStrategy
 
   def next_hand
     bet = @random.rand(0...get_sum(@current_hand_value))
-    hand_value = 0
 
     if bet < @history[@current_hand_value][0]
       hand_value = 0
