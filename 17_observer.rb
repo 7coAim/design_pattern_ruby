@@ -17,17 +17,17 @@ class NumberGenerator
     @observers.delete(observer)
   end
 
-  def notify_observer()
+  def notify_observer
     @observers.each do |observer|
       observer.update(self)
     end
   end
 
-  # def get_number()
-  #   raise NotImplementedError.new("You must implement #{self.class}##{__method__}")
-  # end
+  def number
+    raise NotImplementedError.new("You must implement #{self.class}##{__method__}")
+  end
 
-  def execute()
+  def execute
     raise NotImplementedError.new("You must implement #{self.class}##{__method__}")
   end
 end
