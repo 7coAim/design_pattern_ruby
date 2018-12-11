@@ -1,9 +1,20 @@
 class Hand
   attr_reader :hand_value
 
+  HAND_VALUE_GUU = 0
+  HAND_VALUE_CHO = 1
+  HAND_VALUE_PAA = 2
+
+
+  NAME = ["グー", "チョキ", "パー"].freeze
+
   def initialize(hand_value)
     @hand_value = hand_value
   end
+
+  HAND = [Hand.new(Hand::HAND_VALUE_GUU),
+          Hand.new(Hand::HAND_VALUE_CHO),
+          Hand.new(Hand::HAND_VALUE_PAA)]
 
   def self.get_hand(hand_value)
     HAND[hand_value]
@@ -33,15 +44,7 @@ class Hand
     end
   end
 
-  HAND_VALUE_GUU = 0
-  HAND_VALUE_CHO = 1
-  HAND_VALUE_PAA = 2
 
-  HAND = [Hand.new(Hand::HAND_VALUE_GUU),
-          Hand.new(Hand::HAND_VALUE_CHO),
-          Hand.new(Hand::HAND_VALUE_PAA)]
-
-  NAME = ["グー", "チョキ", "パー"].freeze
 end
 
 
